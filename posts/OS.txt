@@ -1,0 +1,28 @@
+Making cross-compiler
+
+- learned so far:
+    - fedora installation is sudo yum install follow
+    - as per the wik page, I made sure to use an earlier version of ISL to be compatible
+        with CLooG (using curl & tar)
+    - opening new terminal window erases any changes to the environment variables
+        - this happens because export is onl for the current shell
+    - even though I had all of the dependencies installed (they were installed when I installed Fedora)
+        I still had to curl their src code into the folder I made so I could follow the tutorial
+    - current src directory tree:
+        src -
+            |__ build-gcc
+            |__ build-binutils
+            |__ binutils
+            |__ gcc-8.1.0
+            |__ build (I was trying to build clang and llvm )
+    - I learned how to use curl:
+        eg:
+            curl -SL https://ftp.gnu.org/gnu/gcc/gcc-8.1.0/gcc-8.1.0.tar.gz > gcc-8.1.0.tar.gz
+        - the chevron > indicates to curl to load the text into a file called "gcc-8.1.0.tar.gz".
+        - I could have named it anything I wanted (as long as it ended in .tar.gz)
+        - then, I opened the tarball using tar -vxzf gcc-8.1.0.tar.gz
+    - I was having problems when I would call make. From reading the wiki page on GCC from OSdev wiki
+        I learned that even though I was making a cross-compiler with another gcc (I tried 8.2.0)
+        I had to use the same version as the one that I had pre-installed on Fedora (8.1.0)
+    - I've installed VIM as my text editor:
+        - 
