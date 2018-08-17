@@ -1,34 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 
-    <meta charset="utf-8" />
-    <title>My Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:300" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <meta charset="UTF-8">
+    <title>shelby_codes</title>
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap|Nunito+Sans|VT323" rel="stylesheet">
+    <link rel="stylesheet" href="'/static/css/blog.css'">
 </head>
+
 <body>
-    <div id="header">
-        <h1 id="title">Welcome to My Website</h1>
+    <div id="body-container">
+        <h1 id="title"><a class="title" href="index.html">{% block title %}shelby_codes{% endblock %}</a></h1>
+        <ul id="menu_list">
+            <li class="menu"><a href="{% url 'blog:about' %}" class="menu">About</a></li>
+            <li class="menu"><a href="{% url 'blog:projects' %}" class="menu">Projects</a></li>
+            <li class="menu"><a href="{% url 'blog:blog_main' %}" class="menu">Blog</a></li>
+            <li class="menu"><a href="{% url 'blog:index' %}" class="menu">Home</a></li>
+        </ul>
     </div>
 
-    <div id="main">
-        <div class="column">
-            
-        </div>
-        <div  class="column">
+    <div id="columns">
+        <div id="sub-columns">
 
-        </div>
-        <div  class="column">
+            <div id="side-menu" class="menu container">
 
+                <h2>Categories</h2>
+                <ul class="sidemenu">
+                    <!-- {% for category in categories %}
+                                    <h4><a href="{% url 'blog:category' category.slug %}" id="cat_link">{{ category.title }}</a></h4>
+                                    {% for post in posts %}
+                                        {% ifequal post.category category %}
+                                        <li class="sidemenu"><a class="sidemenu" href="{% url 'blog:post' post.slug %}"><sup>|</sup>--{{ post.title|truncatechars:20 }}</a></li>
+                                        {% endifequal %}
+                                    {% endfor %}
+    
+                                {% endfor %} -->
+                </ul>
+
+            </div>
+
+            <div id="post-container" class="content container">
+                <!-- {#                <div id="breadcrumbs">Breadcrumbs > breadcrumbs</div>#} -->
+                <!-- {% block welcome %} -->
+                <h1 id="welcome-title">Welcome!</h1>
+                <h2 id="content-title">New Posts</h2>
+
+                <div id="post-sub-container">
+                    <!-- {%  if posts %}
+                                {% for post in posts reversed %}
+                                    <div id="blog-post-index">
+                                     <img id="post-img-index" src="{{ post.img }}">
+                                        <p id="post-date-published">published: {{ post.publish_date }}</p>
+                                        <h3><a href="{% url 'blog:post' post.slug %}">{{ post.title }}</a></h3>
+                                        <p id="post-text">{{ post.body|truncatewords:20 }}</p>
+                                    </div>
+                                {% endfor %}
+                                {% else %}
+                                <p>There are no posts.</p>
+                            {% endif %} -->
+                </div>
+
+                <!-- {% endblock %} -->
+            </div>
+            <!-- END BLOG-POSTS -->
+
+
+            <!-- START RIGHT-SIDE-BAR -->
+            <div id="sidebar-container">
+                <!-- {% block sidebar %} -->
+                <div id="sidebar-sub-container">
+                    <h2>Archives</h2>
+                    <ul class="archives-list">
+                        <h4 class="archives-month">August 2018</h4>
+                        <!-- {% for post in posts %}
+                                    {% ifequal post.publish_month 8 %}
+                                        <li class="archives-list">
+                                            <a class="archives-list" href="{% url 'blog:post' post.slug %}">{{ post.title }}</a>
+                                        </li>
+                                    {% endifequal %}
+                                {% endfor %} -->
+                    </ul>
+                    <h2>Tags</h2>
+                </div>
+                <!-- {% endblock sidebar %} -->
+            </div>
+            <!-- {# END RIGHT-SIDE-BAR #} -->
         </div>
     </div>
+    <!-- {# end columns #} -->
+
+
+
+    </div>
+
 
     <div id="footer">
-
     </div>
 </body>
+
 </html>
