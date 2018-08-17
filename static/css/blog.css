@@ -198,7 +198,7 @@ a.sidemenu {
     width: 100%;
     margin: 0px;
     padding: 0px;
-    background-image: url('/static/images/background.jpg');
+    background-image: url('static/images/background.jpg');
     background-size: 1000px 1000px;
     background-repeat: repeat;
     display: flex;
