@@ -135,6 +135,7 @@ h1#title {
     font-weight: normal;
     letter-spacing: 0.0625em;
     display: inline;
+    float: left;
     margin: 0px;
     margin-left:10px;
     padding: 10px;
@@ -164,6 +165,7 @@ a.menu:hover,
 a.menu:active,
 a.menu:link,
 a.menu:visited {
+    float: right;
     display: inline;
     text-align: right;
     text-decoration: none;
@@ -267,6 +269,7 @@ h2#content-title {
     width: 100%;
     max-width: 1200px;
     min-width: 500px;
+    float: left;
     display: inline-block;
 }
 
