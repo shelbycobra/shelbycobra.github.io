@@ -101,7 +101,7 @@ ul {
 
 /* ------------- HEADER ------------- */
 
-.page-header {
+#page-header {
     width: 100%;
     border: none;
     margin: 0px auto;
@@ -225,12 +225,6 @@ a.menu:visited {
     width: 100%;
     margin: 0px;
     padding: 0px;
-<<<<<<< HEAD
-=======
-    background-image: url('images/background.jpg');
-    background-size: 1000px 1000px;
-    background-repeat: repeat;
->>>>>>> a3039b0eb8d919384019591fb4148a9e6767c665
     display: flex;
     min-height: 80vh;
 }
