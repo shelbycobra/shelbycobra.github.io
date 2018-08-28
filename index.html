@@ -23,7 +23,7 @@
         </div>
         <script>
         $(function(){
-            $("#page-header").load("nav.html");
+            $("#page-header").load("template/nav.html");
         });
         </script>
         <!-- End Header -->
@@ -65,36 +65,18 @@
 
                 <!-- START RIGHT-SIDE-BAR -->
                 <div id="sidebar-container">
-                    <!-- {% block sidebar %} -->
-                    <div id="sidebar-sub-container">
-
-                        <h2>Categories</h2>
-                        <ul>
-                            <button class="accordion"><h4>Operating Systems</h4></button>
-                            <li class="sidemenu"><a href="posts/OS.txt"><sup>|</sup>--OS.txt</a></li>
-
-                        </ul>
-                        <h2>Archives</h2>
-                        <ul class="archives-list">
-                            <h4 class="archives-month">August 2018</h4>
-                            <!-- {% for post in posts %}
-                                    {% ifequal post.publish_month 8 %}
-                                        <li class="archives-list">
-                                            <a class="archives-list" href="{% url 'blog:post' post.slug %}">{{ post.title }}</a>
-                                        </li>
-                                    {% endifequal %}
-                                {% endfor %} -->
-                        </ul>
-                        <h2>Tags</h2>
-
-
-                    </div>
-                    <!-- {% endblock sidebar %} -->
                 </div>
-                <!-- {# END RIGHT-SIDE-BAR #} -->
+
+                <script>
+                $(function(){
+                    $("#sidebar-container").load("template/side-bar.html");
+                });
+                </script>
+                <!-- END RIGHT-SIDE-BAR -->
+
             </div>
         </div>
-        <!-- {# end columns #} -->
+        <!-- end columns  -->
     </div>
 
     <div id="footer">
